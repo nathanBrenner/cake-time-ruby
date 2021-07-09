@@ -11,6 +11,9 @@ module CakeTimeRuby
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    # this will be different every time, run `ngrok http 3000` to get the domain
+    config.hosts << "83fd2271702b.ngrok.io"
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
