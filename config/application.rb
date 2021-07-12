@@ -11,8 +11,15 @@ module CakeTimeRuby
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    config.before_configuration do 
+      env_file = File.join(Rails.root, 'config', 'local_env.yml')
+      YAML.load(File.open(env_file)).each do |key, value|
+        ENV[key.to_s] = value
+      end if File.exists?(env_file)
+    end
+
     # this will be different every time, run `ngrok http 3000` to get the domain
-    config.hosts << "83fd2271702b.ngrok.io"
+    config.hosts << "#{ENV['NGROK_ID']}.ngrok.io"
 
     # Configuration for the application, engines, and railties goes here.
     #

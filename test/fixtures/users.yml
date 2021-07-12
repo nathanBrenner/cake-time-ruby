@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  birthday: 2021-07-12 14:53:35
+
+two:
+  birthday: 2021-07-12 14:53:35
