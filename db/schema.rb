@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_215335) do
+ActiveRecord::Schema.define(version: 2021_07_13_174821) do
 
   create_table "users", force: :cascade do |t|
     t.datetime "birthday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "alexa_id"
+    t.index ["alexa_id"], name: "index_users_on_alexa_id"
   end
 
 end
