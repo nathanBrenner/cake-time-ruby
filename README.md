@@ -25,3 +25,4 @@ From there, you should be asked for your birthday. You'll have to give the year,
 The next time you hit alexa with "open cake ruby time", and you should be greated with either "Happy birthday" or the number of days till your next birthday.
 
 This only works for one user, so do it again, you need to run `rake db:reset db:migrate`
+# cake-time-ruby
