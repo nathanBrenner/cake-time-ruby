@@ -74,6 +74,7 @@ class AlexaController < ApplicationController
   end
 
   def birthday_countdown
+    # this needs the timezone from the user
     user = User.find_by(alexa_id: params_struct.session.user.userId)
     one_day = 24*60*60*1000;
     today = Date.today
@@ -86,8 +87,9 @@ class AlexaController < ApplicationController
       next_birthday = DateTime.new(current_year, birthdate.month, birthdate.day)
     end
 
-    result = "Happy #{current_year - birthdate.year}th birthday!";
-    if !birthdate.today?
+    if next_birthday.today?
+      result = "Happy #{current_year - birthdate.year}th birthday!";
+    else
       day_count = (today - next_birthday).to_i.abs
       result = "Welcome back. It looks like there are #{day_count} days until your #{current_year - birthdate.year}th birthday."
     end
